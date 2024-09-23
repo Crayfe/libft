@@ -399,10 +399,10 @@ void	test_strrchr(char *test_str)
 	aux = 0;
 	printf("\n\n*** ft_strrchr() ***\n");
 	printf("String: %s, char: %c\n", test_str, 'l');
-	aux = strrchr(test_str, 'l');
+	aux = ft_strrchr(test_str, 'l');
 	printf("found in position: %li\n", aux - test_str);
 	printf("String: %s, char: %c\n", test_str, 'm');
-	aux = strrchr(test_str, 'm');
+	aux = ft_strrchr(test_str, 'm');
 	printf("found in position: %li\n", aux - test_str);
 
 }
