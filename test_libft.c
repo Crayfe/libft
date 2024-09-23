@@ -30,9 +30,9 @@ void	test_strlcpy(char *test_str, char *test_str1);
 void	test_strlcat(char *test_str, char *test_str1);
 void	test_toupper();
 void	test_tolower();
-void	test_strchr();
-void	test_strrchr();
-void	test_strncmp();
+void	test_strchr(char *test_str);
+void	test_strrchr(char *test_str);
+void	test_strncmp(char *test_str, char *test_str1);
 void	test_memcmp();
 void	test_strnsr();
 void	test_atoi();
@@ -66,9 +66,9 @@ int	main(void)
 	test_strlcat(test_str, test_str1);
 	test_toupper();
 	test_tolower();
-	test_strchr();
-	test_strrchr();
-	test_strncmp();
+	test_strchr(test_str);
+	test_strrchr(test_str);
+	test_strncmp(test_str, test_str1);
 	test_memcmp();
 	test_strnsr();
 
@@ -326,22 +326,90 @@ void	test_strlcat(char *test_str, char *test_str1)
 }
 void	test_toupper()
 {
+	printf("\n\n*** toupper() ***\n");
+	printf("before: %c\n", 'h');
+	printf("after: %c\n", toupper('h'));
+	printf("before: %c\n", '7');
+	printf("after: %c\n", toupper('7'));
+	printf("before: %c\n", 'F');
+	printf("after: %c\n", toupper('F'));
+
+
+	printf("\n\n*** ft_toupper() ***\n");
+	printf("before: %c\n", 'h');
+	printf("after: %c\n", ft_toupper('h'));
+	printf("before: %c\n", '7');
+	printf("after: %c\n", ft_toupper('7'));
+	printf("before: %c\n", 'F');
+	printf("after: %c\n", ft_toupper('F'));
 
 }
 void	test_tolower()
 {
+	printf("\n\n*** tolower() ***\n");
+	printf("before: %c\n", 'h');
+	printf("after: %c\n", tolower('h'));
+	printf("before: %c\n", '7');
+	printf("after: %c\n", tolower('7'));
+	printf("before: %c\n", 'F');
+	printf("after: %c\n", tolower('F'));
+
+
+	printf("\n\n*** ft_tolower() ***\n");
+	printf("before: %c\n", 'h');
+	printf("after: %c\n", ft_tolower('h'));
+	printf("before: %c\n", '7');
+	printf("after: %c\n", ft_tolower('7'));
+	printf("before: %c\n", 'F');
+	printf("after: %c\n", ft_tolower('F'));
 
 }
-void	test_strchr()
+void	test_strchr(char *test_str)
 {
+	char *aux = 0;
+	memcpy(test_str, "lorem ipsum dorlor dolore dolorin", 50);
+	printf("\n\n*** strchr() ***\n");
+	printf("String: %s, char: %c\n", test_str, 'l');
+	aux = strchr(test_str, 'l');
+	printf("found in position: %li\n", aux - test_str);
+	printf("String: %s, char: %c\n", test_str, 'm');
+	aux = strchr(test_str, 'm');
+	printf("found in position: %li\n", aux - test_str);
+	aux = 0;
+	printf("\n\n*** ft_strchr() ***\n");
+	printf("String: %s, char: %c\n", test_str, 'l');
+	aux = strchr(test_str, 'l');
+	printf("found in position: %li\n", aux - test_str);
+	printf("String: %s, char: %c\n", test_str, 'm');
+	aux = strchr(test_str, 'm');
+	printf("found in position: %li\n", aux - test_str);
 
 }
-void	test_strrchr()
+void	test_strrchr(char *test_str)
 {
+	char *aux = 0;
+	memcpy(test_str, "lorem ipsum dorlor dolore dolorin", 50);
+	printf("\n\n*** strrchr() ***\n");
+	printf("String: %s, char: %c\n", test_str, 'l');
+	aux = strrchr(test_str, 'l');
+	printf("found in position: %li\n", aux - test_str);
+	printf("String: %s, char: %c\n", test_str, 'm');
+	aux = strrchr(test_str, 'm');
+	printf("found in position: %li\n", aux - test_str);
+	aux = 0;
+	printf("\n\n*** ft_strrchr() ***\n");
+	printf("String: %s, char: %c\n", test_str, 'l');
+	aux = strrchr(test_str, 'l');
+	printf("found in position: %li\n", aux - test_str);
+	printf("String: %s, char: %c\n", test_str, 'm');
+	aux = strrchr(test_str, 'm');
+	printf("found in position: %li\n", aux - test_str);
 
 }
-void	test_strncmp()
+void	test_strncmp(char *test_str, char *test_str1)
 {
+	(void)test_str;
+	(void)test_str1;
 
 }
 void	test_memcmp()
