@@ -34,7 +34,7 @@ void	test_strchr(char *test_str);
 void	test_strrchr(char *test_str);
 void	test_strncmp(char *test_str, char *test_str1);
 void	test_memcmp();
-void	test_strnsr();
+void	test_strnstr();
 void	test_atoi();
 
 
@@ -70,7 +70,7 @@ int	main(void)
 	test_strrchr(test_str);
 	test_strncmp(test_str, test_str1);
 	test_memcmp();
-	test_strnsr();
+	test_strnstr();
 
 	return (0);
 }
@@ -396,6 +396,9 @@ void	test_strrchr(char *test_str)
 	printf("String: %s, char: %c\n", test_str, 'm');
 	aux = strrchr(test_str, 'm');
 	printf("found in position: %li\n", aux - test_str);
+ printf("String: %s, char: %c\n", test_str, '3');
+	aux = strrchr(test_str, '3');
+	printf("found in position: %li\n", aux - test_str);
 	aux = 0;
 	printf("\n\n*** ft_strrchr() ***\n");
 	printf("String: %s, char: %c\n", test_str, 'l');
@@ -404,19 +407,62 @@ void	test_strrchr(char *test_str)
 	printf("String: %s, char: %c\n", test_str, 'm');
 	aux = ft_strrchr(test_str, 'm');
 	printf("found in position: %li\n", aux - test_str);
+ printf("String: %s, char: %c\n", test_str, '3');
+	aux = ft_strrchr(test_str, '3');
+	printf("found in position: %li\n", aux - test_str);
 
 }
 void	test_strncmp(char *test_str, char *test_str1)
 {
-	(void)test_str;
-	(void)test_str1;
+ int n = 0
+ printf("\n\n*** strncmp() ***\n");
+ printf("String 1: %s,\n", test_str);
+ printf("String 2: %s,\n", test_str1);
+ n = 90;
+ printf("Comparation with n = %i: %i,\n", n, strncmp(test_str, test_str1, n);
+ printf("String 1: %s,\n", test_str);
+ printf("String 2: %s,\n", test_str1);
+ n = 0;
+ printf("Comparation with n = %i: %i,\n", n, strncmp(test_str, test_str1, n);
+
+
+ printf("*** ft_strncmp) ***\n");
+ printf("String 1: %s,\n", test_str);
+ printf("String 2: %s,\n", test_str1);
+ n = 90;
+ printf("Comparation with n = %i: %i,\n", n, ft_strncmp(test_str, test_str1, n);
+ printf("String 1: %s,\n", test_str);
+ printf("String 2: %s,\n", test_str1);
+ n = 0;
+ printf("Comparation with n = %i: %i,\n", n, ft_strncmp(test_str, test_str1, n);
 
 }
 void	test_memcmp()
 {
+ int n = 0
+ printf("\n\n*** memcmp() ***\n");
+ printf("String 1: %s,\n", test_str);
+ printf("String 2: %s,\n", test_str1);
+ n = 90;
+ printf("Comparation with n = %i: %i,\n", n, memcmp(test_str, test_str1, n);
+ printf("String 1: %s,\n", test_str);
+ printf("String 2: %s,\n", test_str1);
+ n = 0;
+ printf("Comparation with n = %i: %i,\n", n, memcmp(test_str, test_str1, n);
+
+
+ printf("*** ft_memcmp) ***\n");
+ printf("String 1: %s,\n", test_str);
+ printf("String 2: %s,\n", test_str1);
+ n = 90;
+ printf("Comparation with n = %i: %i,\n", n, ft_memcmp(test_str, test_str1, n);
+ printf("String 1: %s,\n", test_str);
+ printf("String 2: %s,\n", test_str1);
+ n = 0;
+ printf("Comparation with n = %i: %i,\n", n, ft_memcmp(test_str, test_str1, n);
 
 }
-void	test_strnsr()
+void	test_strnstr()
 {
 
 }
