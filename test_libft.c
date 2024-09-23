@@ -27,7 +27,7 @@ void	test_bzero(char *test_str, char *test_str1);
 void	test_memcpy(char *test_str, char *test_str1);
 void	test_memmove(char *test_str, char *test_str1);
 void	test_strlcpy(char *test_str, char *test_str1);
-void	test_strlcat();
+void	test_strlcat(char *test_str, char *test_str1);
 void	test_toupper();
 void	test_tolower();
 void	test_strchr();
@@ -63,7 +63,7 @@ int	main(void)
 	*/
 	test_memcpy(test_str, test_str1);
 	test_strlcpy(test_str, test_str1);
-	test_strlcat();
+	test_strlcat(test_str, test_str1);
 	test_toupper();
 	test_tolower();
 	test_strchr();
@@ -271,7 +271,7 @@ void	test_strlcpy(char *test_str, char *test_str1)
 
 	memcpy(test_str, "lorem ipsum", 11);
 	memcpy(test_str1, "dolor", 11);
-	printf("*** ft_strcpy() ***\n");
+	printf("*** ft_strlcpy() ***\n");
 	printf("before: %s\n", test_str);
 	ft_strlcpy(test_str, test_str + 5, 20);
 	printf("after: %s\n\n", test_str);
@@ -281,8 +281,47 @@ void	test_strlcpy(char *test_str, char *test_str1)
 	printf("after: %s\n\n", test_str);
 
 }
-void	test_strlcat()
+void	test_strlcat(char *test_str, char *test_str1)
 {
+	memcpy(test_str, "lorem ipsum", 12);
+	memcpy(test_str1, "", 1);
+	printf("\n\n*** strlcat() ***\n");
+	//printf("before: %s\n", test_str);
+	//printf("Size: %zu\n", strlcat(test_str, test_str + 5, 20));
+	//printf("after: %s\n\n", test_str);
+	//memcpy(test_str, "lorem ipsum", 12);
+	printf("before: %s\n", test_str);
+	printf("Size: %zu\n", strlcat(test_str, test_str1, 20));
+	printf("after: %s\n\n", test_str);
+	memcpy(test_str, "lorem ipsum", 12);
+	memcpy(test_str1, "dolor dolore dolorin", 25);
+	printf("before: %s\n", test_str);
+	printf("Size: %zu\n", strlcat(test_str, test_str1, 90));
+	printf("after: %s\n\n", test_str);
+	memcpy(test_str, "lorem ipsum", 12);
+	printf("before: %s\n", test_str);
+	printf("Size: %zu\n", strlcat(test_str, test_str1, 10));
+	printf("after: %s\n\n", test_str);
+
+	memcpy(test_str, "lorem ipsum", 12);
+	memcpy(test_str1, "", 1);
+	printf("\n\n*** ft_strlcat() ***\n");
+	//printf("before: %s\n", test_str);
+	//printf("Size: %zu\n", ft_strlcat(test_str, test_str + 5, 20));
+	//printf("after: %s\n\n", test_str);
+	//memcpy(test_str, "lorem ipsum", 12);
+	printf("before: %s\n", test_str);
+	printf("Size: %zu\n", ft_strlcat(test_str, test_str1, 20));
+	printf("after: %s\n\n", test_str);
+	memcpy(test_str, "lorem ipsum", 12);
+	memcpy(test_str1, "dolor dolore dolorin", 25);
+	printf("before: %s\n", test_str);
+	printf("Size: %zu\n", ft_strlcat(test_str, test_str1, 90));
+	printf("after: %s\n\n", test_str);
+	memcpy(test_str, "lorem ipsum", 12);
+	printf("before: %s\n", test_str);
+	printf("Size: %zu\n", ft_strlcat(test_str, test_str1, 10));
+	printf("after: %s\n\n", test_str);
 
 }
 void	test_toupper()
