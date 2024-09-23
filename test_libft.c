@@ -33,8 +33,8 @@ void	test_tolower();
 void	test_strchr(char *test_str);
 void	test_strrchr(char *test_str);
 void	test_strncmp(char *test_str, char *test_str1);
-void	test_memcmp();
-void	test_strnstr();
+void	test_memcmp(char *test_str, char *test_str1);
+void	test_strnstr(char *test_str, char *test_str1);
 void	test_atoi();
 
 
@@ -69,8 +69,8 @@ int	main(void)
 	test_strchr(test_str);
 	test_strrchr(test_str);
 	test_strncmp(test_str, test_str1);
-	test_memcmp();
-	test_strnstr();
+	test_memcmp(test_str, test_str1);
+	test_strnstr(test_str, test_str1);
 
 	return (0);
 }
@@ -437,7 +437,7 @@ void	test_strncmp(char *test_str, char *test_str1)
  printf("Comparation with n = %i: %i,\n", n, ft_strncmp(test_str, test_str1, n);
 
 }
-void	test_memcmp()
+void	test_memcmp(char *test_str, char *test_str1)
 {
  int n = 0
  printf("\n\n*** memcmp() ***\n");
@@ -462,8 +462,30 @@ void	test_memcmp()
  printf("Comparation with n = %i: %i,\n", n, ft_memcmp(test_str, test_str1, n);
 
 }
-void	test_strnstr()
+void	test_strnstr(char *test_str, char *test_str1)
 {
+	char *aux = 0;
+ memcpy(test_str, "lorem ipsum dorlor dolore dolorin", 50);
+ memcpy(test_str1, "ipsum", 10);
+	printf("\n\n*** strnstr() ***\n");
+	printf(" Big string: %s, Little string: %s,\n", test_str, test_str1);
+	aux = strnstr(test_str, test_str1, 90);
+	printf("found in position: %li\n", aux - test_str);
+ memcpy(test_str1, "dolore", 10);
+	printf(" Big string: %s, Little string: %s,\n", test_str, test_str1);
+	aux = strnstr(test_str, test_str1, 90);
+	printf("found in position: %li\n", aux - test_str);
+	aux = 0;
+	memcpy(test_str, "lorem ipsum dorlor dolore dolorin", 50);
+ memcpy(test_str1, "ipsum", 10);
+	printf("*** ft_strnstr() ***\n");
+	printf(" Big string: %s, Little string: %s,\n", test_str, test_str1);
+	aux = ft_strnstr(test_str, test_str1, 90);
+	printf("found in position: %li\n", aux - test_str);
+ memcpy(test_str1, "dolore", 10);
+	printf(" Big string: %s, Little string: %s,\n", test_str, test_str1);
+	aux = ft_strnstr(test_str, test_str1, 90);
+	printf("found in position: %li\n", aux - test_str);
 
 }
 void	test_atoi()
