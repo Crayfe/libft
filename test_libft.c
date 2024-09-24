@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-#include <bsd/string.h>
+//#include <bsd/string.h>
 
 void	test_isalpha();
 void	test_isdigit();
@@ -33,9 +33,23 @@ void	test_tolower();
 void	test_strchr(char *test_str);
 void	test_strrchr(char *test_str);
 void	test_strncmp(char *test_str, char *test_str1);
+void	test_memchr(char *test_str);
 void	test_memcmp(char *test_str, char *test_str1);
 void	test_strnstr(char *test_str, char *test_str1);
 void	test_atoi();
+void	test_calloc();
+void	test_strdup();
+void	test_substr();
+void	test_strjoin();
+void	test_strtrim();
+void	test_split();
+void	test_itoa();
+void	test_strmapi();
+void	test_strteri();
+void	test_putchar_fd();
+void	test_putstr_fd();
+void	test_putendl_fd();
+void	test_putnbr_fd();
 
 
 int	main(void)
@@ -69,8 +83,11 @@ int	main(void)
 	test_strchr(test_str);
 	test_strrchr(test_str);
 	test_strncmp(test_str, test_str1);
+	test_memchr(test_str);
 	test_memcmp(test_str, test_str1);
 	test_strnstr(test_str, test_str1);
+	test_calloc();
+	test_strdup();
 
 	return (0);
 }
@@ -437,6 +454,10 @@ void	test_strncmp(char *test_str, char *test_str1)
 	printf("Comparation with n = %i: %i,\n", n, ft_strncmp(test_str, test_str1, n);
 
 }
+void	test_memchr(char *test_str)
+{
+
+}
 void	test_memcmp(char *test_str, char *test_str1)
 {
 	int n = 0
@@ -521,4 +542,56 @@ void	test_atoi()
 	printf("string: %s\n", "--76gfh8");
 	printf("integer: %i\n\n", ft_atoi("--76gfh8"));
 
+}
+test_calloc()
+{
+
+}
+test_strdup()
+{
+
+}
+void	test_substr()
+{
+
+}
+void	test_strjoin()
+{
+
+}
+void	test_strtrim()
+{
+
+}
+void	test_split()
+{
+
+}
+void	test_itoa()
+{
+
+}
+void	test_strmapi()
+{
+
+}
+void	test_strteri()
+{
+
+}
+void	test_putchar_fd()
+{
+
+}
+void	test_putstr_fd()
+{
+
+}
+void	test_putendl_fd()
+{
+
+}
+void	test_putnbr_fd()
+{
+	
 }
