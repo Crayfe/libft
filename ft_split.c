@@ -6,15 +6,15 @@
 /*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:29:20 by cayuso-f          #+#    #+#             */
-/*   Updated: 2024/09/24 13:51:08 by cayuso-f         ###   ########.fr       */
+/*   Updated: 2024/09/24 19:51:11 by cayuso-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	aux_count_words(char const *s, char c)
 {
-	int	i;
-	int	count;
+	int		i;
+	int		count;
 	char	prev;
 
 	i = 0;
@@ -30,11 +30,12 @@ int	aux_count_words(char const *s, char c)
 	}
 	return (count);
 }
+
 char	*aux_get_word(char const *s, char c, int *pos)
 {
 	char	*word;
-	int	len;
-	int	jump;
+	int		len;
+	int		jump;
 
 	len = 0;
 	while (s[*pos] == c)
@@ -50,17 +51,16 @@ char	*aux_get_word(char const *s, char c, int *pos)
 	word[len] = '\0';
 	while (--len)
 		word[len] = s[pos + len];
-	*pos = *pos + jump
-	return word;
+	*pos = *pos + jump;
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	char	*aux_word;
-	int	words;
-	int	pos;
-	int	i;
+	int		words;
+	int		pos;
+	int		i;
 
 	words = aux_count_words(s, c);
 	split = (char **)malloc(words + 1);
@@ -70,18 +70,16 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	pos = 0;
 	while (i < words)
-	{	
-		aux_word = aux_get_word(s, c, &pos);
-		if (aux_word)
-			split[i] = aux_word;
-		else
+	{
+		split[i] = aux_get_word(s, c, &pos);
+		if (!split[i])
 		{
-			while(--i)
+			while (--i)
 				free(split[i]);
 			free(split);
 			return (0);
 		}
 		i++;
 	}
-	return (split)
+	return (split);
 }

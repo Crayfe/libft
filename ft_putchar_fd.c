@@ -6,12 +6,12 @@
 /*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:36:28 by cayuso-f          #+#    #+#             */
-/*   Updated: 2024/09/24 11:37:45 by cayuso-f         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:14:41 by cayuso-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
-
+	write(fd, &c, 1);
 }
