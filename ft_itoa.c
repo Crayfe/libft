@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 11:27:23 by cayuso-f          #+#    #+#             */
-/*   Updated: 2024/09/24 12:06:15 by cayuso-f         ###   ########.fr       */
+/*   Created: 2024/09/24 13:52:51 by cayuso-f          #+#    #+#             */
+/*   Updated: 2024/09/24 13:57:13 by cayuso-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_itoa(int n)
 {
-	char	*join;
-	int	len1;
-	int	len2;
+	char	*itoa;
 
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	join = (char *)malloc(len1 + len2 +1);
-	if (!join)
-		return (0);
-	ft_strlcpy(join, s1);
-	ft_strlcat(join, s2);
-	return (join);
+	return (itoa);
 }
