@@ -29,9 +29,7 @@ char	*ft_itoa(int n)
 	char	*itoa;
 	int		aux_n;
 	int		len;
-	int		i;
 
-	i = 0;
 	len = aux_getlen(n);
 	if (len <= 0)
 		return (0);
