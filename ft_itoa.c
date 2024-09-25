@@ -6,7 +6,7 @@
 /*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 13:52:51 by cayuso-f          #+#    #+#             */
-/*   Updated: 2024/09/24 20:13:38 by cayuso-f         ###   ########.fr       */
+/*   Updated: 2024/09/25 16:14:03 by cayuso-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,7 +18,7 @@ int	aux_getlen(int n)
 	len = 0;
 	while (n != 0)
 	{
-		aux_n = aux_n / 10;
+		n = n / 10;
 		++len;
 	}
 	return (len);
@@ -32,7 +32,7 @@ char	*ft_itoa(int n)
 	int		i;
 
 	i = 0;
-	len = aux_getlen();
+	len = aux_getlen(n);
 	if (len <= 0)
 		return (0);
 	itoa = malloc(len + 1);

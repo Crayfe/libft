@@ -6,24 +6,10 @@
 /*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:28:25 by cayuso-f          #+#    #+#             */
-/*   Updated: 2024/09/24 19:32:41 by cayuso-f         ###   ########.fr       */
+/*   Updated: 2024/09/25 16:07:46 by cayuso-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
-int	aux_newlen(char const *s, char const *set, int i)
-{
-	int	new_len;
-
-	new_len = 0;
-	while (si[i])
-	{
-		if (!aux_contains(set, s1[i]))
-			++new_len;
-		i++;
-	}
-	return (new_len);
-}
 
 int	aux_contains(char const *set, char c)
 {
@@ -37,6 +23,20 @@ int	aux_contains(char const *set, char c)
 		i++;
 	}
 	return (0);
+}
+
+int	aux_newlen(char const *s, char const *set, int i)
+{
+	int	new_len;
+
+	new_len = 0;
+	while (s[i])
+	{
+		if (!aux_contains(set, s[i]))
+			++new_len;
+		i++;
+	}
+	return (new_len);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -54,11 +54,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	while (i < new_len)
 	{
-		if (aux_contains(set, s[j]))
+		if (aux_contains(set, s1[j]))
 			++j;
 		else
 		{
-			trim[i] = s[j];
+			trim[i] = s1[j];
 			i++;
 		}
 	}

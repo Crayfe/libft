@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 11:40:14 by cayuso-f          #+#    #+#             */
-/*   Updated: 2024/09/25 16:18:06 by cayuso-f         ###   ########.fr       */
+/*   Created: 2024/09/25 12:48:31 by cayuso-f          #+#    #+#             */
+/*   Updated: 2024/09/25 15:18:58 by cayuso-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned int	aux_int;
+	t_list	*aux_node;
 
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		aux_int = -1 * n;
-	}
-	else
-		aux_int = n;
-	if (n > 9)
-	{
-		ft_putnbr_fd(aux_int / 10, fd);
-		ft_putchar_fd(aux_int % 10, fd);
-	}
-	else
-	{
-		ft_putchar_fd(aux_int % 10 + '0', fd);
-	}
+	aux_node = lst;
+	while (aux_node && aux_node->next)
+		aux_node = aux_node->next;
+	return (aux_node);
 }

@@ -6,7 +6,7 @@
 /*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:34:04 by cayuso-f          #+#    #+#             */
-/*   Updated: 2024/09/24 19:38:38 by cayuso-f         ###   ########.fr       */
+/*   Updated: 2024/09/25 16:16:02 by cayuso-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,7 +18,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	i = 0;
 	while (s[i])
 	{
-		f(i, s[i]);
+		f(i, s + i);
 		i++;
 	}
 }

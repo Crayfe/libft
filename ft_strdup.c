@@ -6,7 +6,7 @@
 /*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 10:19:17 by cayuso-f          #+#    #+#             */
-/*   Updated: 2024/09/24 19:39:51 by cayuso-f         ###   ########.fr       */
+/*   Updated: 2024/09/25 15:53:23 by cayuso-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,6 +20,6 @@ char	*ft_strdup(const char *s)
 	str = (char *)malloc(str_len + 1);
 	if (!str)
 		return (0);
-	str = ft_strncpy(str, s, str_len + 1);
+	ft_strlcpy(str, s, str_len + 1);
 	return (str);
 }

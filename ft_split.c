@@ -6,7 +6,7 @@
 /*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:29:20 by cayuso-f          #+#    #+#             */
-/*   Updated: 2024/09/24 19:51:11 by cayuso-f         ###   ########.fr       */
+/*   Updated: 2024/09/25 16:12:26 by cayuso-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,7 +15,6 @@ int	aux_count_words(char const *s, char c)
 {
 	int		i;
 	int		count;
-	char	prev;
 
 	i = 0;
 	count = 0;
@@ -39,7 +38,7 @@ char	*aux_get_word(char const *s, char c, int *pos)
 
 	len = 0;
 	while (s[*pos] == c)
-		*pos++;
+		*pos = *pos + 1;
 	while (s[*pos + len] && s[*pos + len] != c)
 		len++;
 	if (len <= 0)
@@ -50,7 +49,7 @@ char	*aux_get_word(char const *s, char c, int *pos)
 	jump = len;
 	word[len] = '\0';
 	while (--len)
-		word[len] = s[pos + len];
+		word[len] = s[*pos + len];
 	*pos = *pos + jump;
 	return (word);
 }
@@ -66,7 +65,7 @@ char	**ft_split(char const *s, char c)
 	split = (char **)malloc(words + 1);
 	if (!split)
 		return (0);
-	split[words + 1] = '\0';
+	split[words + 1] = 0;
 	i = 0;
 	pos = 0;
 	while (i < words)
