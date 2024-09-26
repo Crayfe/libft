@@ -6,7 +6,7 @@
 /*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:29:20 by cayuso-f          #+#    #+#             */
-/*   Updated: 2024/09/25 16:12:26 by cayuso-f         ###   ########.fr       */
+/*   Updated: 2024/09/26 13:37:32 by cayuso-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -80,5 +80,6 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
+	split[i]  = 0;
 	return (split);
 }
