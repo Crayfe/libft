@@ -6,14 +6,15 @@
 /*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 12:41:40 by cayuso-f          #+#    #+#             */
-/*   Updated: 2024/09/26 12:52:34 by cayuso-f         ###   ########.fr       */
+/*   Updated: 2024/09/26 13:19:21 by cayuso-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	aux_is_space(char c)
 {
-	if (c == ' ' || c == '\n' || c == '\f' || c == '\v' || c == '\r')
+	if (c == ' ' || c == '\n' || c == '\f'
+		|| c == '\v' || c == '\t' || c == '\r')
 		return (1);
 	return (0);
 }
@@ -37,9 +38,9 @@ int	ft_atoi(const char *nptr)
 	sign = 1;
 	numb = 0;
 	i = aux_clear_spaces(nptr);
-	if (nptr[0] == '-' || nptr[0] == '+')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (nptr[0] == '-')
+		if (nptr[i] == '-')
 			sign = -1;
 		i++;
 	}
