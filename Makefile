@@ -9,11 +9,7 @@
 #    Updated: 2024/09/25 21:23:53 by cayuso-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-AR = ar rcs
-RM = rm -f
-
-CC = clang
+CC = cc
 CCFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
@@ -27,20 +23,18 @@ OBJ_BONUS = $(SRC_BONUS:.c=.o)
 all	:	$(NAME)
 
 $(NAME)	:	$(HEADERS) $(OBJ) 
-			$(AR) $(NAME) $(OBJ)
+			ar rcs $(NAME) $(OBJ)
 
 bonus	:	$(HEADERS) $(OBJ) $(OBJ_BONUS) 
-			$(AR) $(NAME) $(OBJ) $(OBJ_BONUS)
+			ar -rcs $(NAME) $(OBJ) $(OBJ_BONUS)
 
 %.o:	%.c	$(HEADERS)
 			$(CC) $(CCFLAGS) -c $< -o $@ -I $(HEADERS)
 
 clean	:
-			$(RM) $(OBJ) $(OBJ_BONUS)
+			@rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean	: 	clean
-			$(RM) $(NAME)
+			@rm -f $(NAME)
 
 re	: 	fclean all
-
-rebonus	:	fclean bonus
