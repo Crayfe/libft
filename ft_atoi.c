@@ -6,7 +6,7 @@
 /*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 12:41:40 by cayuso-f          #+#    #+#             */
-/*   Updated: 2024/09/20 14:39:21 by cayuso-f         ###   ########.fr       */
+/*   Updated: 2024/09/26 12:52:34 by cayuso-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -21,7 +21,7 @@ int	aux_is_space(char c)
 int	aux_clear_spaces(const char *s)
 {
 	int	i;
-	
+
 	i = 0;
 	while (aux_is_space(s[i]))
 		++i;
