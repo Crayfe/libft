@@ -16,7 +16,12 @@ int	aux_getlen(int n)
 	int	len;
 
 	len = 0;
-	while (n != 0)
+	if (n < 0)
+	{
+		len = 1;
+		n = -n;
+	}
+	while (n > 0)
 	{
 		n = n / 10;
 		++len;
@@ -27,20 +32,26 @@ int	aux_getlen(int n)
 char	*ft_itoa(int n)
 {
 	char	*itoa;
-	int		aux_n;
 	int		len;
-
-	len = aux_getlen(n);
-	if (len <= 0)
-		return (0);
-	itoa = malloc(len + 1);
+	
+	len = 1;
+	if (n != 0)
+		len = aux_getlen(n);
+	itoa = (char *)malloc(len + 1);
 	if (!itoa)
 		return (0);
-	aux_n = n;
-	while (len--)
+	itoa[len] = '\0';
+	if (n < 0)
 	{
-		itoa[len - 1] = aux_n % 10;
-		aux_n = aux_n / 10;
+		itoa[0] = '-';
+		n = -n;
+	}
+	if (n == 0)
+		itoa[0] = '0';
+	while (n > 0)
+	{
+		itoa[--len] = '0' + (n % 10) ;
+		n = n / 10;
 	}
 	return (itoa);
 }
