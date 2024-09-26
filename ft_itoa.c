@@ -11,20 +11,20 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	aux_getlen(int n)
+int	aux_getlen(long n)
 {
 	int	len;
 
 	len = 0;
-	if (n < 0)
+	if (n <= 0)
 	{
-		len = 1;
 		n = -n;
+		len++;
 	}
 	while (n > 0)
 	{
 		n = n / 10;
-		++len;
+		len++;
 	}
 	return (len);
 }
@@ -33,25 +33,25 @@ char	*ft_itoa(int n)
 {
 	char	*itoa;
 	int		len;
+	long	aux_n;
 	
-	len = 1;
-	if (n != 0)
-		len = aux_getlen(n);
+	aux_n = n;
+	len = aux_getlen(aux_n);
 	itoa = (char *)malloc(len + 1);
 	if (!itoa)
 		return (0);
 	itoa[len] = '\0';
+	if (n == 0)
+		itoa[0] = '0';
 	if (n < 0)
 	{
 		itoa[0] = '-';
-		n = -n;
+		aux_n = -aux_n;
 	}
-	if (n == 0)
-		itoa[0] = '0';
-	while (n > 0)
+	while (aux_n > 0)
 	{
-		itoa[--len] = '0' + (n % 10) ;
-		n = n / 10;
+		itoa[--len] = '0' + (aux_n % 10) ;
+		aux_n = aux_n / 10;
 	}
 	return (itoa);
 }

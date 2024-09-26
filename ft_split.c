@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	aux_count_words(char const *s, char c)
+static int	aux_count_words(char const *s, char c)
 {
 	int		i;
 	int		count;
@@ -30,7 +30,7 @@ int	aux_count_words(char const *s, char c)
 	return (count);
 }
 
-char	*aux_get_word(char const *s, char c, int *pos)
+static char	*aux_get_word(char const *s, char c, int *pos)
 {
 	char	*word;
 	int		len;
@@ -43,12 +43,12 @@ char	*aux_get_word(char const *s, char c, int *pos)
 		len++;
 	if (len <= 0)
 		return (0);
-	word = malloc(len + 1);
+	word = (char *)malloc(len + 1);
 	if (!word)
 		return (0);
 	jump = len;
 	word[len] = '\0';
-	while (--len)
+	while (--len + 1)
 		word[len] = s[*pos + len];
 	*pos = *pos + jump;
 	return (word);
@@ -62,7 +62,7 @@ char	**ft_split(char const *s, char c)
 	int		i;
 
 	words = aux_count_words(s, c);
-	split = (char **)malloc(words + 1);
+	split = (char **)ft_calloc(words + 1, sizeof(char *));
 	if (!split)
 		return (0);
 	split[words + 1] = 0;
@@ -71,6 +71,7 @@ char	**ft_split(char const *s, char c)
 	while (i < words)
 	{
 		split[i] = aux_get_word(s, c, &pos);
+		//printf("%i: %s\n", i, aux_get_word(s, c, &pos));
 		if (!split[i])
 		{
 			while (--i)
@@ -80,6 +81,20 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-	split[i]  = 0;
 	return (split);
 }
+/*
+#include <stdio.h>
+
+int	main ()
+{
+	//printf("Words: %i\n", aux_count_words("  lorem     ipsum dolor   sit, a met", ' '));
+	printf("Words: %li\n", sizeof(char));
+	char **words;
+	words = ft_split("  lorem     ipsum dolor   sit, a met", ' ');
+	printf("Word[0] = %s\n", words[0]);
+	free(words);
+	return (0);
+
+}
+*/

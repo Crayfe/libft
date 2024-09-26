@@ -11,57 +11,22 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	aux_contains(char const *set, char c)
-{
-	int	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-int	aux_newlen(char const *s, char const *set, int i)
-{
-	int	new_len;
-
-	new_len = 0;
-	while (s[i])
-	{
-		if (!aux_contains(set, s[i]))
-			++new_len;
-		i++;
-	}
-	return (new_len);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
-	int		j;
 	int		new_len;
 	char	*trim;
 
-	j = 0;
-	new_len = aux_newlen(s1, set, 0);
+	i = 0;
+	new_len = ft_strlen(s1);
+	while (s1[i] && ft_strchr(set, s1[i]))
+		i++;
+	while ((s1[new_len - 1] && new_len > i) && (ft_strchr(set, s1[new_len - 1])))
+		new_len--;
+	new_len = new_len - i;
 	trim = (char *)malloc(new_len + 1);
 	if (!trim)
 		return (0);
-	i = 0;
-	while (i < new_len)
-	{
-		if (aux_contains(set, s1[j]))
-			++j;
-		else
-		{
-			trim[i] = s1[j];
-			i++;
-		}
-	}
-	trim[i] = '\0';
+	ft_strlcpy(trim, (char *)s1 + i, new_len + 1);
 	return (trim);
 }
