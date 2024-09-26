@@ -36,7 +36,7 @@ int	ft_atoi(const char *nptr)
 
 	sign = 1;
 	numb = 0;
-	i = aux_clear_spaces();
+	i = aux_clear_spaces(nptr);
 	if (nptr[0] == '-' || nptr[0] == '+')
 	{
 		if (nptr[0] == '-')
