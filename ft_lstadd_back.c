@@ -15,8 +15,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*aux_node;
 
-	aux_node = lst[0];
-	while (aux_node->next)
-		aux_node = aux_node->next;
-	aux_node->next = new;
+	if (!lst[0])
+		lst[0] = new;
+	else
+	{
+		aux_node = lst[0];
+		while (aux_node->next)
+			aux_node = aux_node->next;
+		aux_node->next = new;
+	}
 }
