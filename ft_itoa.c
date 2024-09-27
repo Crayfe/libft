@@ -50,7 +50,7 @@ char	*ft_itoa(int n)
 	}
 	while (aux_n > 0)
 	{
-		itoa[--len] = '0' + (aux_n % 1);
+		itoa[--len] = '0' + (aux_n % 10);
 		aux_n = aux_n / 10;
 	}
 	return (itoa);
