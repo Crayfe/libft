@@ -565,6 +565,17 @@ void	test_strtrim()
 }
 void	test_split()
 {
+        char **words;
+		int	i;
+
+		i = 0;
+        words = ft_split("  lorem     ipsum dolor   sit, a met", ' ');
+		while (words[i++])
+        	printf("Word[%i] = %s\n", i, words[i]);
+        i = 0;
+		while (words[i++])
+        	free(words[i]);
+        free(words);
 
 }
 void	test_itoa()
