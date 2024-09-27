@@ -9,6 +9,10 @@
 /*   Updated: 2024/09/24 20:27:33 by cayuso-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef LIBFT_H
+#define LIBFT_H
+
 #include <stdlib.h>
 #include <unistd.h>
 
