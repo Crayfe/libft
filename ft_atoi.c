@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	aux_is_space(char c)
+static	int	aux_is_space(char c)
 {
 	if (c == ' ' || c == '\n' || c == '\f'
 		|| c == '\v' || c == '\t' || c == '\r')
@@ -19,7 +19,7 @@ int	aux_is_space(char c)
 	return (0);
 }
 
-int	aux_clear_spaces(const char *s)
+static	int	aux_clear_spaces(const char *s)
 {
 	int	i;
 
