@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	aux_getlen(long n)
+static	int	aux_getlen(long n)
 {
 	int	len;
 
