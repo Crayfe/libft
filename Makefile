@@ -28,7 +28,7 @@ bonus	:	$(OBJ_BONUS)
 
 $(OBJ_BONUS):
 		$(CC) $(CCFLAGS) -c $(SRC_BONUS)
-		ar -rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+		ar -rcs $(NAME) $(OBJ_BONUS)
 clean	:
 		rm -f $(OBJ) $(OBJ_BONUS)
 
@@ -36,3 +36,6 @@ fclean	: 	clean
 		rm -f $(NAME)
 
 re	: 	fclean all
+
+.DEFAULT_GOAL := all
+.PHONY: all bonus clean fclean re;
