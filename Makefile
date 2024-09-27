@@ -30,9 +30,9 @@ $(OBJ_BONUS):
 		$(CC) $(CCFLAGS) -c $(SRC_BONUS)
 		ar -rcs $(NAME) $(OBJ) $(OBJ_BONUS)
 clean	:
-			@rm -f $(OBJ) $(OBJ_BONUS)
+		rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean	: 	clean
-			@rm -f $(NAME)
+		rm -f $(NAME)
 
 re	: 	fclean all
