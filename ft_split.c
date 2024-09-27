@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	aux_count_words(char const *s, char c)
+static	int	aux_count_words(char const *s, char c)
 {
 	int		i;
 	int		count;
@@ -30,7 +30,7 @@ static int	aux_count_words(char const *s, char c)
 	return (count);
 }
 
-static char	*aux_get_word(char const *s, char c, int *pos)
+static	char	*aux_get_word(char const *s, char c, int *pos)
 {
 	char	*word;
 	int		len;
