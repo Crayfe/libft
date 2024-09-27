@@ -43,13 +43,13 @@ static char	*aux_get_word(char const *s, char c, int *pos)
 		len++;
 	if (len <= 0)
 		return (0);
-	word = (char *)malloc(len + 1);
+	word = (char *)malloc(sizeof(char) * len + 1);
 	if (!word)
 		return (0);
 	jump = len;
 	word[len] = '\0';
 	while (--len + 1)
-		word[len] = s[*pos + len];
+		word[len] = (char)s[*pos + len];
 	*pos = *pos + jump;
 	return (word);
 }
@@ -62,10 +62,9 @@ char	**ft_split(char const *s, char c)
 	int		i;
 
 	words = aux_count_words(s, c);
-	split = (char **)ft_calloc(words + 1, sizeof(char *));
+	split = (char **)malloc((words + 1) * sizeof(char *));
 	if (!split)
 		return (0);
-	split[words + 1] = 0;
 	i = 0;
 	pos = 0;
 	while (i < words)
@@ -74,13 +73,14 @@ char	**ft_split(char const *s, char c)
 		//printf("%i: %s\n", i, aux_get_word(s, c, &pos));
 		if (!split[i])
 		{
-			while (--i)
-				free(split[i]);
+			while (i--)
+				free((void *)split[i]);
 			free(split);
 			return (0);
 		}
 		i++;
 	}
+	split[i] = 0;
 	return (split);
 }
 /*
@@ -89,10 +89,12 @@ char	**ft_split(char const *s, char c)
 int	main ()
 {
 	//printf("Words: %i\n", aux_count_words("  lorem     ipsum dolor   sit, a met", ' '));
-	printf("Words: %li\n", sizeof(char));
+	//printf("Words: %li\n", sizeof(char));
 	char **words;
 	words = ft_split("  lorem     ipsum dolor   sit, a met", ' ');
 	printf("Word[0] = %s\n", words[0]);
+	printf("Word[1] = %s\n", words[1]);
+	printf("Word[2] = %s\n", words[2]);
 	free(words);
 	return (0);
 
