@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   test_libft.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cayuso-f <cayuso-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 12:14:41 by cayuso-f          #+#    #+#             */
 /*   Updated: 2024/09/24 10:07:54 by cayuso-f         ###   ########.fr       */
