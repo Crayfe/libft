@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cayuso-f <cayuso-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 13:52:51 by cayuso-f          #+#    #+#             */
 /*   Updated: 2024/09/27 11:39:57 by cayuso-f         ###   ########.fr       */
