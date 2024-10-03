@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cayuso-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cayuso-f <cayuso-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 13:06:45 by cayuso-f          #+#    #+#             */
 /*   Updated: 2024/09/17 13:18:43 by cayuso-f         ###   ########.fr       */
