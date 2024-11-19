@@ -7,20 +7,21 @@ This project allows us to understand the way in which these functions They work,
 In this part it is proposed to redo some functions of the libc. The functions to be implemented will have the same prototypes and will implement the same behaviors as the original functions. They must be as described in the man. The only difference will be the nomenclature.
 They will begin with the prefix “ft_”. For example, strlen will become ft_strlen.
 
-| First     | Second     | Using malloc |
-| -------- | -------- | ------------ |
-| isalpha  | toupper  |  strdup |
-| isdigit  | tolower  |  calloc |
-| isalnum  | strchr   |
-| isascii  | strrchr  |
-| isprint  | strncmp  |
-| strlen   | memchr   |
-| memset   | memcmp   |
-| bzero    | strnstr  |
-| memcpy   | atoi     |
-| memmove  |     |
-| strlcpy  |    |
-| strlcat  |    |
+| Libc functions| --- |
+| ----------- | ----------- |
+|             |             |
+| ft_isalpha  | ft_toupper  |
+| ft_isdigit  | ft_tolower  |
+| ft_isalnum  | ft_strchr   |
+| ft_isascii  | ft_strrchr  |
+| ft_isprint  | ft_strncmp  |
+| ft_strlen   | ft_memchr   |
+| ft_memset   | ft_memcmp   |
+| ft_bzero    | ft_strnstr  |
+| ft_memcpy   | ft_atoi     |
+| ft_memmove  | ft_strdup   |
+| ft_strlcpy  | ft_calloc   |
+| ft_strlcat  |             |
 
 ### Additional functions
 
