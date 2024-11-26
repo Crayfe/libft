@@ -1,5 +1,5 @@
 
-# LIBF
+# LIBFT
 | 42 Project| Description |
 | ----------- | ----------- |
 | <a href=""> <img src="https://github.com/0bvim/42-project-badges/blob/main/badges/libftm.png?raw=true" /></a> | This project consist to program a library in C. This library have a lot of general purpose functions that will rely on in more complex programs. This project allows us to understand the way in which these functions They work, how to implement them and learn to use them.|
